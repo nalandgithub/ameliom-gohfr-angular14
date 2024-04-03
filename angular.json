@@ -23,7 +23,11 @@
               "src/assets"
             ],
             "styles": [
+              {
+                "input": "node_modules/@progress/kendo-theme-default/dist/all.css"
+              },
               "src/styles.css"
+              
             ],
             "scripts": []
           },
@@ -97,5 +101,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "fb7a673b-75d2-4615-9271-6de8e1782037"
   }
 }
