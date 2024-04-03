@@ -1,0 +1,71 @@
+<p>login works!</p>
+<!-- <kendo-popup >
+    <div class="popup-content" style="background-color: white;">
+      <div class="row">
+        <div class="col-xs-3">
+          <a href="https://www.gohfr.com"><img src="../../../assets/logo.png" height="25" title="logo" style="margin: 5px;"></a>
+        </div>
+        <div class="col-xs-5" style="margin-left: 10px; margin-top: 13px;">
+          <p style="color: black; font-size: smaller;"><b>Open in the Gohfr App</b></p>
+        </div>
+        <div class="col-xs-3" style="float: right;">
+          <button class="btn btn-primary" (click)="openMobileApp()" style="margin: 5px;"> Open</button>
+        </div>
+      </div>
+    </div>
+  </kendo-popup> -->
+  <div class="login-box" style="text-align:center;padding-top:10px;">
+    <div class="login-logo" >
+      <a href="javascript:void(0)"><img src="../../../assets/logo.png" height="50" title="logo"></a>
+    </div>
+    <!-- /.login-logo -->
+    <div class="login-box-body">
+      <p class="login-box-msg">Sign in please</p>
+
+      <form #f="ngForm" novalidate  >
+        <div class="form-group has-feedback">
+          <!-- <input id="email" type="text" maxlength="100" required name="email"
+         (blur)="showme=email.valid || (email.pristine && !submitted)"
+           class="form-control" placeholder="Email" [ngModel]="credentials.email" #email="ngModel" validateEmail> -->
+           <input id="email" type="text" maxlength="100" required name="email" class="form-control"
+            placeholder="Email" placeholder="Email" [ngModel]="credentials.email" #email="ngModel" validateEmail>
+          <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+          <small *ngIf="!showme" class="text-danger">Please enter a valid email</small>
+        </div>
+        <div class="form-group has-feedback">
+          <input type="password" maxlength="200" class="form-control" id="password" required name="password" placeholder="Password" ngModel>
+          <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+        </div>
+        <div class="row">
+          <div class="col-xs-8">
+            <a routerLinkActive="active" routerLink="/forgotpassword" href="#">I forgot my password</a>
+          </div>
+          <div class="col-xs-8">
+            <a  href="{{driverSignUpURL}}">Driver Signup</a>
+          </div>
+          <div class="col-xs-8">
+              <a routerLinkActive="active" routerLink="/customer-signup" href="#">Customer Signup</a>
+            </div>
+          <!-- /.col -->
+          <div class="col-xs-4">
+              <button type="submit" class="btn btn-primary" [disabled]="f.invalid || isRequesting" onclick="login()">Sign In</button>
+              <!-- <app-spinner [isRunning]="isRequesting"></app-spinner> -->
+          </div>
+
+          <!-- /.col -->
+        </div>
+        <div class="row">
+          <div class="col-md-11">
+            <span style="color:red;">{{errors}}</span>
+            <span *ngIf="unconfirmedEmail" style="color:red;">Looks like your email address is not verified.
+              Click on the button <a href="javascript:void(0)" (click)="resendEmail()" style="cursor: pointer">“Resend Verification Email”</a>
+              to have us send you a new email request.</span>
+        </div>
+        </div>
+      </form>
+    </div>
+    <div style="text-align:center;padding-top:10px;">
+        <small><b style="color: #fd9f21;">Version v1.0.5</b></small>
+    </div>
+    <!-- /.login-box-body -->
+  </div>
